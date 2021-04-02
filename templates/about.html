@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+  <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
+  <h1>This is About Us page</h1>
+  <a href="{{ url_for('home') }}">Home</a>&nbsp
+{% endblock content %}
