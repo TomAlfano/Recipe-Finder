@@ -2,15 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>My Wonderful Site</title>
+  <title>Recipie Finder</title>
 </head>
 <body>
   <div id="header">
+    <h1 id="topBarTitle"> Standard Web Browser Tool </h1>
   </div>
-
-  <div id="content">
-    {% block content %}
-    {% endblock %}
+  <div class="mainContent">
+    <div id = "sidePanel">
+      <ul>
+        <li>Item 1</li>
+      </ul>
+    </div>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
 </body>
 </html>
