@@ -1,20 +1,22 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request
 
-app = Flask(__name__, static_folder="static")
+import requests
 app = Flask(__name__)
-@app.route("/")
-@app.route("/home")
 
-def home():
-    return render_template('home.html', title='Home')
+url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
 
-@app.route("/about")
-def about():
-    return render_template('about.html', title='About Us')
+headers = {
+  'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  'x-rapidapi-key': "<YOUR_RAPID_API_KEY>",
+  }
 
+random_joke = "food/jokes/random"
+find = "recipes/findByIngredients"
+randomFind = "recipes/random"
 
+@app.route('/')
+def search_page():
+  return render_template('website.html')
 
-
-#------------------------
-#ctrl + c to stop server
-#------------------------
+if __name__ == '__main__':
+  app.run()
