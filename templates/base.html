@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href=".\style.css">
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -15,9 +15,42 @@
 
   <title>{% block title %} Base page {% endblock %}</title>
   </head>
+
   <body>
+  <div id="header">
+    <h1 id="topBarTitle"> Standard Web Browser Tool </h1>
+  </div>
+  <div class="mainContent">
+    <div id = "sidePanel">
+      <ul>
+        <li>What Meal ?</li>
+        &nbsp
+        <label for="cars">Choose a car:</label>
+
+        <select name="cars" id="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+        
+        <li>Flavour ?</li>
+        &nbsp
+        <li>What ?</li>
+        &nbsp
+        <li>Preferences ?</li>
+        &nbsp
+        <li>Diet ?</li>
+      </ul>
+    </div>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
   {% block body %}
-      Body block
+      Body block      
   {% endblock %}
   </body>
+
 </html>
