@@ -23,16 +23,13 @@ def numberize(checkBoxInput):
 def search_page():
     form = InputForm()
     if form.validate_on_submit():
-        ingredientInput = [{'meat':numberize(form.meat.data)},{'fish':numberize(form.fish.data)},
-            {'vegetable':numberize(form.vegetable.data)},{'fruit':numberize(form.fruit.data)},{'pasta':numberize(form.pasta.data)},
-            {'rice':numberize(form.rice.data)},{'egg':numberize(form.egg.data)},{'dairy':numberize(form.dairy.data)},
-            {'pizza':numberize(form.pizza.data)}]
-        return redirect('/results')
+        ingredientInput = {'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data),'pizza':numberize(form.pizza.data)}
+        return redirect(url_for('results'))
     return render_template('website.html', form=form)
 
-@app.route("/results", methods=['GET', 'POST'])
-def result():
-    return renter_template('results.html')
+@app.route("/results")
+def results():
+    return render_template('results.html')
 
 if __name__ == '__main__':
   app.run()

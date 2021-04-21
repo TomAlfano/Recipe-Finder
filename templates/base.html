@@ -19,6 +19,7 @@
   <body>
   <div id="header">
     <h1 id="topBarTitle"> Standard Web Browser Tool </h1>
+    <a href="{{ url_for('results') }}"> Results </a>
   </div>
   <div class="mainContent">
     <div id = "sidePanel">
@@ -49,7 +50,7 @@
     </div>
   </div>
   {% block body %}
-          
+
   {% endblock %}
   </body>
 

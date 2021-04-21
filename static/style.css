@@ -16,15 +16,13 @@ a:hover{
   font-weight: bold;
   color: Black;
   padding-left: 15px;
-
 }
 
 #header {
   display: flex;
-  width: 100%;
+  width: auto;
   background-color: #add8e6;
   margin: 5px 5px 5px 5px;
-  margin-right: 15px;
 }
 
 .mainContent {
