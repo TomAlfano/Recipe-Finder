@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% block title %} Recipes searcher {% endblock %}
-{% block body %}
-<link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
-
+{% block content %}
+  <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
+  <div class="forms">
+    <div class="countries">
+      {{form.places}}
+    </div>
+    <div class="ingredients">
+      {{ form.csrf_token }}
+      <div>{{ form.meat}}{{form.meat.label}}</div>
+      <div>{{ form.fish}}{{form.fish.label}}</div>
+      <div>{{ form.vegetable}}{{form.vegetable.label}}</div>
+      <div>{{ form.fruit}}{{form.fruit.label}}</div>
+      <div>{{ form.pasta}}{{form.pasta.label}}</div>
+      <div>{{ form.rice}}{{form.rice.label}}</div>
+      <div>{{ form.egg}}{{form.egg.label}}</div>
+      <div>{{ form.dairy}}{{form.dairy.label}}</div>
+      <div>{{ form.pizza}}{{form.pizza.label}}</div>
+      <input type="submit" value="Find Recipe">
+    </div>
+  </div>
 {% endblock %}

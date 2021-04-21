@@ -45,3 +45,20 @@ a:hover{
   background-color: #add8e6;
   margin: 5px 5px 5px 5px;
 }
+
+.forms{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+.countries{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.ingredients{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
