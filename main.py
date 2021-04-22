@@ -24,7 +24,7 @@ def search_page():
     form = InputForm()
     if form.validate_on_submit():
         ingredientInput = {'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data),'pizza':numberize(form.pizza.data)}
-        return redirect(url_for('result'))#, ingredientInput=ingredientInput))
+        return redirect(url_for('result', ingredientInput=ingredientInput, form=form))
     return render_template('website.html', form=form)
 
 @app.route('/home', methods=['GET', 'POST'])
@@ -35,10 +35,13 @@ def home():
         return redirect(url_for('result'))#, ingredientInput=ingredientInput))
     return render_template('website.html', form=form)
 
-@app.route("/result/")
+@app.route("/result/", methods=['GET', 'POST'])
 def result():
-
-    return render_template('result.html', title="Results")
+    form = InputForm()
+    if form.validate_on_submit():
+        ingredientInput = {'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data),'pizza':numberize(form.pizza.data)}
+        return redirect(url_for('result', ingredientInput=ingredientInput, form=form))
+    return render_template('result.html', title="Results", form=form)
 
 if __name__ == '__main__':
   app.run()

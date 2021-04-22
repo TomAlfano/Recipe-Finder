@@ -17,42 +17,22 @@
   </head>
 
   <body>
-  <div id="header">
-    <h1 id="topBarTitle"> Popty </h1>
-    <a href="{{ url_for('result') }}"> Results </a>
-    <a href="{{ url_for('home') }}"> Home </a>
-  </div>
-  <div class="mainContent">
-    <div id = "sidePanel">
-      <ul>
-        <li>What Meal ?</li>
-        &nbsp
-        <label for="cars">Choose a car:</label>
+    <header>
+      <div class="topBarTitle">
+        <h1 class="topBarTitle"><a href="{{ url_for('home') }}"> Popty </h1></a>
+      </div>
+      <div class="spacer"></div>
+      <div class="homeButton">
+        <h1 class="homeButton"><a href="{{ url_for('home') }}"> Home </a></h1>
+      </div>
+    </header>
+    <div class="mainContent">
 
-        <select name="cars" id="cars">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
 
-        <li>Flavour ?</li>
-        &nbsp
-        <li>What ?</li>
-        &nbsp
-        <li>Preferences ?</li>
-        &nbsp
-        <li>Diet ?</li>
-      </ul>
+        {% block content %}
+        {% endblock %}
+
     </div>
-    <div id="content">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </div>
-  {% block body %}
-
-  {% endblock %}
   </body>
 
 </html>
