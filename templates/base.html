@@ -19,19 +19,38 @@
   <body>
     <header>
       <div class="topBarTitle">
-        <h1 class="topBarTitle"><a href="{{ url_for('home') }}"> Popty </h1></a>
+        <h1 class="topBarTitle"><a href="/"> Popty </h1></a>
       </div>
       <div class="spacer"></div>
       <div class="homeButton">
-        <h1 class="homeButton"><a href="{{ url_for('home') }}"> Home </a></h1>
+        <h1 class="homeButton"><a href="/"> Home </a></h1>
       </div>
     </header>
     <div class="mainContent">
-
-
+      <div id = "sidePanel">
+        <div class="forms">
+          <form method="POST" action="">
+            <div class="countries">
+              {{form.location(id = 'list')}}
+            </div>
+            <div class="ingredients">
+              {{ form.csrf_token }}
+              <div>{{ form.meat}}{{form.meat.label}}</div>
+              <div>{{ form.fish}}{{form.fish.label}}</div>
+              <div>{{ form.vegetable}}{{form.vegetable.label}}</div>
+              <div>{{ form.fruit}}{{form.fruit.label}}</div>
+              <div>{{ form.pasta}}{{form.pasta.label}}</div>
+              <div>{{ form.rice}}{{form.rice.label}}</div>
+              <div>{{ form.egg}}{{form.egg.label}}</div>
+              <div>{{ form.dairy}}{{form.dairy.label}}</div>
+              <div>{{ form.pizza}}{{form.pizza.label}}</div>
+              <div class = "button">{{ form.submit(id = 'submitButton') }}</div>
+            </div>
+          </form>
+        </div>
+      </div>
         {% block content %}
         {% endblock %}
-
     </div>
   </body>
 
