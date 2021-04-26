@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect
-from .forms import  InputForm, locations
+from .forms import  InputForm
+from .bayes import machineLearning
 
 import requests
 app = Flask(__name__)
@@ -36,11 +37,15 @@ def search_page():
         OutputString = ""
         querystring = ""
         global ingredientInput
-        ingredientInput = {'country':dict(locations).get(form.location.data),'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data),'pizza':numberize(form.pizza.data)}
+        ingredientInput = {'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'potato':numberize(form.potato.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data)}
+        inputCheckboxes = []
         for ingredient, value in ingredientInput.items():
+            inputCheckboxes.append(value)
             if value == 1:
                 OutputString = OutputString + " " + ingredient
-        querystring = {"query":OutputString,"number":"5","offset":"0","instructionsRequired":"true","cuisine":"British"}
+
+        machineCountry = machineLearning(inputCheckboxes)
+        querystring = {"query":OutputString,"number":"5","offset":"0","instructionsRequired":"true","cuisine":machineCountry}
         global response
         response = requests.request("GET", url, headers=headers, params=querystring).json()
         return redirect(url_for('search_page', value=ingredientInput, form=form, response=response))

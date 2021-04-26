@@ -1,0 +1,55 @@
+﻿Name,Meat,Fish,Veg,Fruit,Potato,Pasta,Rice,Egg,Dairy,Class
+RoastPotatoes,0,0,1,0,1,0,0,0,0,British
+Apple Crumble,0,0,0,1,0,0,0,0,0,British
+Chicken Tikka masala,1,0,1,1,0,0,1,0,1,British
+ChocolateDurbanPudding,0,0,0,0,0,0,0,0,1,British
+BreadAndButterPudding,1,0,0,1,0,0,0,0,1,British
+BritishCarbonara,1,0,0,0,0,1,0,1,1,British
+ChocolateMeltInTheMiddle,0,0,0,0,0,0,0,0,1,British
+Kipper,0,1,0,0,0,0,0,0,0,British
+StickyToffeePudding,0,0,0,0,0,0,0,0,1,British
+Banoffee Pie,0,0,0,1,0,0,0,0,1,British
+Rice Pilaf,0,0,0,0,0,0,1,0,0,French
+Pâtes d'Alsace,0,0,0,0,0,1,0,1,1,French
+Bouillabaisse,0,1,1,0,1,0,0,0,0,French
+BakedBrieEnCrouteWithDriedCherryCompoteFilling,0,0,0,1,0,0,0,1,1,French
+BeefBourguignon,1,0,1,0,0,0,0,0,0,French
+ChickenCasserole,1,0,1,0,0,0,0,0,0,French
+ChickenMadras,1,0,1,1,0,0,1,0,1,Indian
+MasalaPasta,1,0,1,0,0,1,0,0,0,Indian
+BombayPotatoes,0,0,1,0,1,0,0,0,0,Indian
+ChickenKorma,1,0,1,0,0,0,1,0,0,Indian
+Akoori,0,0,1,0,0,0,0,1,0,Indian
+Butter chicken curry,1,0,1,1,0,0,1,0,1,Indian
+LambBalti,1,0,0,0,0,0,0,0,0,Indian
+OnionBhaji,0,0,1,0,0,0,0,0,0,Indian
+ChocolateBiscuitCake,0,0,0,0,0,0,0,0,1,Indian
+Fishcakes,0,1,0,0,0,0,0,0,0,Indian
+Bolognese,1,0,0,0,0,1,0,0,1,Italian
+PrawnChickenPasta,1,1,0,0,0,1,0,0,1,Italian
+TunaSweetcornPasta,1,1,1,0,0,1,0,0,0,Italian
+MeatFeastPizza,1,0,0,0,0,0,0,0,1,Italian
+Lasagne,1,0,1,0,0,1,0,0,1,Italian
+IceCream,0,0,0,0,0,0,0,0,0,Italian
+HamSandwich,1,1,1,1,0,0,1,0,1,Italian
+FishChickenRicePasta,1,1,1,0,0,1,1,0,1,Italian
+BeefStew,1,0,1,0,0,0,1,0,1,Italian
+SteakChips,1,0,0,0,1,0,0,0,0,Italian
+Carbonara,0,0,0,0,0,1,0,1,1,Italian
+Risotto,0,0,0,0,0,0,1,0,0,Italian
+PestoPasta,0,0,1,0,0,1,0,0,1,Italian
+Sushi,1,1,1,0,0,0,1,0,0,Japanese
+Yakitori,1,0,0,0,0,0,0,0,0,Japanese
+BeefRamen,1,0,0,0,0,1,0,1,0,Japanese
+Korokke,0,0,0,0,1,0,0,0,0,Japanese
+Onigiri,0,0,0,0,0,0,1,0,1,Japanese
+JapanesePersimmon,0,0,0,1,0,0,0,0,0,Japanese
+PotatoQuesadilla,1,0,1,0,1,0,0,1,1,Mexican
+FruitSalad,0,0,0,1,0,0,0,0,0,Mexican
+ChilliConCarne,1,0,1,0,0,0,1,0,1,Mexican
+SeaBass,0,1,0,0,0,0,0,0,0,Mexican
+ChickenCaesarSalad,1,0,1,0,0,1,0,0,1,Mexican
+Cheeseburger,1,0,1,0,0,0,0,0,1,Mexican
+Fruit&VegSalad,0,0,1,1,0,0,0,0,0,Mexican
+FishChips,0,1,1,1,1,1,1,0,0,Mexican
+FishRice,0,1,0,0,0,0,1,0,1,Mexican
