@@ -9,7 +9,7 @@ url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
 
 headers = {
   'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-  'x-rapidapi-key': "<YOUR_RAPID_API_KEY>",
+  'x-rapidapi-key': "88a64d9efdmsh2e4be6f10fa1609p17a7dcjsn6b18e14d8cee",
   }
 
 #sets global variable for SQL work-around
