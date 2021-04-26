@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ShhItsASecret'
 
-url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
+url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search"
 
 headers = {
   'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -15,6 +15,10 @@ headers = {
 #sets global variable for SQL work-around
 global ingredientInput
 ingredientInput = 'Please click "Find Recipe"'
+
+global response
+response = ""
+
 
 #changes checkbox input from True/False to 1/0
 def numberize(checkBoxInput):
@@ -29,10 +33,18 @@ def search_page():
     form = InputForm()
     #message = 'Please click "Find Recipe"'
     if form.validate_on_submit():
+        OutputString = ""
+        querystring = ""
         global ingredientInput
         ingredientInput = {'country':dict(locations).get(form.location.data),'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data),'pizza':numberize(form.pizza.data)}
-        return redirect(url_for('search_page', value=ingredientInput, form=form))
-    return render_template('website.html', title="Popty" , form=form, value=ingredientInput)
+        for ingredient, value in ingredientInput.items():
+            if value == 1:
+                OutputString = OutputString + " " + ingredient
+        querystring = {"query":OutputString,"number":"5","offset":"0","instructionsRequired":"true","cuisine":"British"}
+        global response
+        response = requests.request("GET", url, headers=headers, params=querystring).json()
+        return redirect(url_for('search_page', value=ingredientInput, form=form, response=response))
+    return render_template('website.html', title="Popty" , form=form, value=ingredientInput, response=response)
 
 if __name__ == '__main__':
   app.run()
