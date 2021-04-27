@@ -4,8 +4,24 @@
   <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
   <div class="content">
     <h1>Found Recipes</h1>
-    <h3>Selection is: <h3>
-    <p>{{ value }}</p>
-    <p>{{ response }}</p>
+    {% for key in machineCountry.keys() %}
+      {% if machineCountry == "" %}
+      {% else %}
+        <h3>You have got a {{ key }} dish!</h3>
+      {% endif %}
+    {% endfor %}
+    <h3>Selection is: {{ value }}</h3>
+
+    <h3> Found Recipes: </h3>
+    {% for key in response.results %}
+      {% if response.results %}
+        <p> {{ key }} </p>
+      {% elif response.results== None %}
+        <h3>Error, no recipes found with that combination</h3>
+      {% endif %}
+    {% endfor %}
+
+    {{ response.results }}
+
   </div>
 {% endblock %}

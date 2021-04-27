@@ -16,9 +16,10 @@ headers = {
 #sets global variable for SQL work-around
 global ingredientInput
 ingredientInput = 'Please click "Find Recipe"'
-
 global response
 response = ""
+global machineCountry
+machineCountry = {}
 
 
 #changes checkbox input from True/False to 1/0
@@ -43,13 +44,13 @@ def search_page():
             inputCheckboxes.append(value)
             if value == 1:
                 OutputString = OutputString + " " + ingredient
-
+        global machineCountry
         machineCountry = machineLearning(inputCheckboxes)
         querystring = {"query":OutputString,"number":"5","offset":"0","instructionsRequired":"true","cuisine":machineCountry}
         global response
         response = requests.request("GET", url, headers=headers, params=querystring).json()
-        return redirect(url_for('search_page', value=ingredientInput, form=form, response=response))
-    return render_template('website.html', title="Popty" , form=form, value=ingredientInput, response=response)
+        return redirect(url_for('search_page', value=ingredientInput, form=form, machineCountry=machineCountry, response=response))
+    return render_template('website.html', title="Popty" , form=form, value=ingredientInput, response=response, machineCountry=machineCountry)
 
 if __name__ == '__main__':
   app.run()
