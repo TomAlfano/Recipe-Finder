@@ -10,7 +10,7 @@
           {% for key in machineCountry.keys() %} <!- Goes through a loop of the suggested country from machine learning to demonstrate the selected cuisine to the user-->
             {% if response.results != [] %}
               <div >
-                <h3 itemprop="recipeCusine">You have got a {{ key }} dish!</h3>
+                <h3 >You have got a <span itemprop="recipeCuisine">{{ key }}</span> dish!</h3>
               </div>
             {% else %}
               <h3>{{ key }} is the best dish for what you have selected</h3>
@@ -26,7 +26,7 @@
               {% else %}  <!- Displays ingredients the user has selected-->
                 {% for key,val in value.items() %}
                   {% if val == 1 %}
-                    <span itemprop="recipeIgredient">{{ key }}</span>
+                    <span itemprop="recipeIngredient">{{ key }}</span>
                   {% else %}
                   {% endif %}
                 {% endfor %}
