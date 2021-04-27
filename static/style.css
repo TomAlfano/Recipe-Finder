@@ -4,12 +4,12 @@ CHROME STORES STYLESHEETS
 */
 
 header a {
-  color: white;
   text-decoration: none;
+  color: rgb(218,152,59);
 }
 
 a:hover{
-  color: #e6e6e6;
+  color: orange;
   text-decoration: none;
 }
 
@@ -44,7 +44,6 @@ header {
   align-items: flex-end;
   font-size: 2.3rem;
   font-weight: bold;
-  color: Black;
   padding-right: 15px;
 }
 
@@ -75,6 +74,9 @@ header {
 
 #sidePanelTitle{
   margin-left: 15px;
+  color: rgb(218,152,59);
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .forms{
@@ -95,6 +97,7 @@ header {
   margin-left: 0px;
   font-size: 1.5rem;
   margin-left: 15px;
+  color: rgb(218,152,59);
 }
 
 .cvTitle{
