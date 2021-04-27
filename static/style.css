@@ -36,7 +36,7 @@ header {
 .logo{
   max-width:130px;
   max-height: 130px;
-
+  margin-left: 20px;
 }
 
 .homeButton{
@@ -70,7 +70,7 @@ header {
 }
 
 .PageIntro{
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 15px;
 }
 
 #sidePanelTitle{
@@ -112,6 +112,10 @@ header {
   flex-direction: column;
   padding: 0px 0px 0px 10px;
 }
+
+.outputTitle{
+  padding-left: 5px;
+}
 .output{
   display: flex;
   flex-direction: row;
@@ -130,11 +134,11 @@ header {
   margin-bottom: 5px;
 }
 
+.outputText h3{
+  margin-top: 5px;
+}
+
 .outputImage{
   display: flex;
   padding-top: 20px;
-}
-
-.outputText h3{
-  margin-top: 5px;
 }

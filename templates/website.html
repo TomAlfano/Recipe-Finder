@@ -34,7 +34,7 @@
       <div class="results">
         {% if value == 'Please click "Find Recipe"' %}
         {% else %}
-          <h3> Found Recipes: </h3>
+          <h2 class = "outputTitle"> Found Recipes: </h2>
 
             {% if response.results != [] %}
               {% for key in response.results %}
