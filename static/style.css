@@ -3,13 +3,13 @@ TO UPDATE CSS USE SHIFT+REFRESH
 CHROME STORES STYLESHEETS
 */
 
-a {
-  color: black;
+header a {
+  color: white;
   text-decoration: none;
 }
 
 a:hover{
-  color: blue;
+  color: #e6e6e6;
   text-decoration: none;
 }
 
@@ -18,7 +18,7 @@ header {
   flex-direction: row;
   align-items: center;
   width: auto;
-  background-color: #add8e6;
+  background-color: rgb(34,64,90);
   margin: 5px 5px 5px 5px;
 }
 
@@ -31,8 +31,14 @@ header {
   padding-left: 15px;
 }
 .spacer{
-  width: 80%;
+  width: 90%;
 }
+.logo{
+  max-width:130px;
+  max-height: 130px;
+
+}
+
 .homeButton{
   display: flex;
   align-items: flex-end;
@@ -48,17 +54,27 @@ header {
 }
 
 #sidePanel {
-  height: 800px;
+  min-height: 100%;
   width: 250px;
-  background-color: #dddddd;
+  background-color: rgb(34,64,90);
   margin: 5px 5px 5px 5px;
+  color: white;
 }
 
 .content {
   width: 100%;
   height: auto;
-  background-color: #add8e6;
+  background-color: #e6e6e6;
   margin: 5px 5px 5px 5px;
+  min-height: 800px;
+}
+
+.PageIntro{
+  padding: 10px 10px 10px 10px;
+}
+
+#sidePanelTitle{
+  margin-left: 15px;
 }
 
 .forms{
@@ -89,5 +105,36 @@ header {
 
 #submitButton{
   font-size: 1.5rem;
+}
 
+.results{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 0px 10px;
+}
+.output{
+  display: flex;
+  flex-direction: row;
+  margin: 0px 10px 10px 0px;
+  padding: 10px 10px 10px 10px;
+  background-color: #fcfcfc;
+  justify-content: space-between;
+}
+
+.outputText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.outputText p{
+  margin-bottom: 5px;
+}
+
+.outputImage{
+  display: flex;
+  padding-top: 20px;
+}
+
+.outputText h3{
+  margin-top: 5px;
 }

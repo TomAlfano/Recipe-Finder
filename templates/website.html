@@ -3,25 +3,58 @@
 {% block content %}
   <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
   <div class="content">
-    <h1>Found Recipes</h1>
-    {% for key in machineCountry.keys() %}
-      {% if machineCountry == "" %}
-      {% else %}
-        <h3>You have got a {{ key }} dish!</h3>
-      {% endif %}
-    {% endfor %}
-    <h3>Selection is: {{ value }}</h3>
+    <div class="outut">
+      <div class="PageIntro">
+        <h1>Found Recipes</h1>
 
-    <h3> Found Recipes: </h3>
-    {% for key in response.results %}
-      {% if response.results %}
-        <p> {{ key }} </p>
-      {% elif response.results== None %}
-        <h3>Error, no recipes found with that combination</h3>
-      {% endif %}
-    {% endfor %}
+        {% for key in machineCountry.keys() %}
+          {% if response.results != [] %}
+            <h3>You have got a {{ key }} dish!</h3>
+          {% else %}
+            <h3>{{ key }} is the best dish for what you have selected</h3>
+          {% endif %}
+        {% endfor %}
+        {% if value == 'Please click "Find Recipe"' %}
+          <h3>This recipe finder will take in your desired ingredents and decide what county has the best food for your selection. It will then give you a recipe from the country that contains your ingredients.</h3>
+        {% endif %}
+        <h3>Selected ingredient(s):
+          {% if value == 'Please click "Find Recipe"' %}
+            {{ value }} to begin
+          {% else %}
+            {% for key,val in value.items() %}
+              {% if val == 1 %}
+                {{ key }}
+              {% else %}
 
-    {{ response.results }}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </h3>
+      </div>
+      <div class="results">
+        {% if value == 'Please click "Find Recipe"' %}
+        {% else %}
+          <h3> Found Recipes: </h3>
 
+            {% if response.results != [] %}
+              {% for key in response.results %}
+              <div class="output">
+                <div class="outputText">
+                  <h3> {{ key.title }} </h3>
+                  <p> Ready in: {{ key.readyInMinutes }} mins </p>
+                  <p> Serves: {{ key.servings }}
+                  <p> See more about the recipe: <a href="{{ key.sourceUrl }}">{{ key.sourceUrl }}</a></p>
+                </div>
+                <img class="outputImage" src="https://spoonacular.com/recipeImages/{{ key.id }}-240x150.jpg" alt="{{ key.title }}" width="240" height="150">
+              </div>
+              {% endfor %}
+            {% else %}
+              <h3>Error, no recipes found with that combination of ingredients</h3>
+            {% endif %}
+          {% endif %}
+
+
+      </div>
+    </div>
   </div>
 {% endblock %}
