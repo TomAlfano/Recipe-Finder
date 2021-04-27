@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect
 from .forms import  InputForm
+from .forms import JSONButton
 from .bayes import machineLearning
 
+import json
 import requests
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ShhItsASecret'
@@ -33,6 +35,7 @@ def numberize(checkBoxInput):
 @app.route('/', methods=['GET', 'POST'])
 def search_page():
     form = InputForm()
+    button = JSONButton()
     #message = 'Please click "Find Recipe"'
     if form.validate_on_submit():
         OutputString = ""
@@ -49,8 +52,13 @@ def search_page():
         querystring = {"query":OutputString,"number":"5","offset":"0","instructionsRequired":"true","cuisine":machineCountry}
         global response
         response = requests.request("GET", url, headers=headers, params=querystring).json()
-        return redirect(url_for('search_page', value=ingredientInput, form=form, machineCountry=machineCountry, response=response))
-    return render_template('website.html', title="Popty" , form=form, value=ingredientInput, response=response, machineCountry=machineCountry)
+        if response !=None:
+            if button.validate_on_submit():
+                download = json.dumps(response)
+                with open('dump.json', 'w') as json_file:
+                    json.dump(response, json_file)
+        return redirect(url_for('search_page', value=ingredientInput, form=form, button=button, machineCountry=machineCountry, response=response))
+    return render_template('website.html', title="Popty" , form=form, button=button, value=ingredientInput, response=response, machineCountry=machineCountry)
 
 if __name__ == '__main__':
   app.run()

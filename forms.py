@@ -25,3 +25,6 @@ class InputForm(FlaskForm):
     fruit = BooleanField("Fruit", default=False, validators=[Optional()])
 
     submit = SubmitField('Find Recipe')
+
+class JSONButton(FlaskForm):
+    download = SubmitField('Export as JSON')
