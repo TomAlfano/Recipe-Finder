@@ -4,38 +4,44 @@
   <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
   <div class="content">
     <div class="outut">
-      <div class="PageIntro">
-        <h1>Found Recipes</h1>
-
-        {% for key in machineCountry.keys() %}
-          {% if response.results != [] %}
-            <h3>You have got a {{ key }} dish!</h3>
-          {% else %}
-            <h3>{{ key }} is the best dish for what you have selected</h3>
-          {% endif %}
-        {% endfor %}
-        {% if value == 'Please click "Find Recipe"' %}
-          <h3>This recipe finder will take in your desired ingredents and decide what county has the best food for your selection. It will then give you a recipe from the country that contains your ingredients.</h3>
-        {% endif %}
-        <h3>Selected ingredient(s):
+      <div class = "TopBar">
+        <div class="PageIntro">
+          <h1>Found Recipes</h1>
+          {% for key in machineCountry.keys() %}
+            {% if response.results != [] %}
+              <h3>You have got a {{ key }} dish!</h3>
+            {% else %}
+              <h3>{{ key }} is the best dish for what you have selected</h3>
+            {% endif %}
+          {% endfor %}
           {% if value == 'Please click "Find Recipe"' %}
-            {{ value }} to begin
-          {% else %}
-            {% for key,val in value.items() %}
-              {% if val == 1 %}
-                {{ key }}
-              {% else %}
-
-              {% endif %}
-            {% endfor %}
+            <h3>This recipe finder will take in your desired ingredents and decide what county has the best food for your selection. It will then give you a recipe from the country that contains your ingredients.</h3>
           {% endif %}
-        </h3>
+          <h3>Selected ingredient(s):
+            {% if value == 'Please click "Find Recipe"' %}
+              {{ value }} to begin
+            {% else %}
+              {% for key,val in value.items() %}
+                {% if val == 1 %}
+                  {{ key }}
+                {% else %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </h3>
+        </div>
+        <div class="countryImage">
+          {% for key in machineCountry.keys() %}
+            {% if response.results != [] %}
+              <img class="countryImage" src=".\static\{{ key }}.png" alt="{{ key }}">
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
       <div class="results">
         {% if value == 'Please click "Find Recipe"' %}
         {% else %}
           <h2 class = "outputTitle"> Found Recipes: </h2>
-
             {% if response.results != [] %}
               {% for key in response.results %}
               <div class="output">
@@ -52,8 +58,6 @@
               <h3>Error, no recipes found with that combination of ingredients</h3>
             {% endif %}
           {% endif %}
-
-
       </div>
     </div>
   </div>

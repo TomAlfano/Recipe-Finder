@@ -116,6 +116,7 @@ header {
 .outputTitle{
   padding-left: 5px;
 }
+
 .output{
   display: flex;
   flex-direction: row;
@@ -125,6 +126,22 @@ header {
   justify-content: space-between;
 }
 
+.TopBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.PageIntro{
+  display: flex;
+  flex-direction: column;
+}
+
+.countryImage{
+  padding-top: 10px;
+  width: 300px;
+  height: 300px;
+}
 .outputText{
   display: flex;
   flex-direction: column;

@@ -69,7 +69,7 @@ def machineLearning(inputCheckboxes):
             while i < len(inputCheckboxes):
                 probability = probability*probabilityScores[i]
                 i=i+1
-
+            #sets up return variable in right format
             if finalProbability < probability:
                 finalProbability = probability
                 fProbability = { key : probability }
@@ -81,7 +81,6 @@ def machineLearning(inputCheckboxes):
         #print(fProbability)
         return fProbability
 
-            #print(trainingDict[key][(len(trainingDict[key])-1)])
 
 #inputCheckboxes = [1,0,0,1,0,0,0,1,0]
 #machineLearning(inputCheckboxes)
