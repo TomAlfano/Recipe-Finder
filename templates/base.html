@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href=".\style.css">
-
   <title>{% block title %} Base page {% endblock %}</title>
   </head>
-
   <body>
     <header>
       <div class="topBarTitle">
@@ -50,8 +48,8 @@
               <div class = "button">{{ form.submit(id = 'submitButton') }}</div>
             </div>
           </form>
-        <form>  <div class = "JSONbutton">{{ button.download(id = 'JSONButton') }}</div> </form>
         </div>
+        <form><div class = "JSONbutton">{{ button.download(id = 'JSONButton') }}</div></form>
       </div>
         {% block content %}
         {% endblock %}
