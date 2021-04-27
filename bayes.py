@@ -30,7 +30,6 @@ def machineLearning(inputCheckboxes):
             totalList = []
             c=0
             for row in trainingDict[key]:
-                #print(row)
 
                 i=1
                 while i<(len(row)-1):
@@ -55,7 +54,6 @@ def machineLearning(inputCheckboxes):
             probabilityScores = []
             compareArray = []
             compareArray = trainingDict[key][(len(trainingDict[key])-1)]
-            #print(compareArray)
             i=0
             while i < len(inputCheckboxes):
                 if inputCheckboxes[i] == 1:
@@ -73,14 +71,4 @@ def machineLearning(inputCheckboxes):
             if finalProbability < probability:
                 finalProbability = probability
                 fProbability = { key : probability }
-
-            #print(key)
-            #print(probability)
-            #print(probability)
-            #print(" ")
-        #print(fProbability)
         return fProbability
-
-
-#inputCheckboxes = [1,0,0,1,0,0,0,1,0]
-#machineLearning(inputCheckboxes)

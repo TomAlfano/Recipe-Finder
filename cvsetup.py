@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, SelectMultipleField, BooleanField, RadioField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Regexp, InputRequired, Required, Optional
-
+# Setting up flask forms with labels to indicate to the user the ingredients they can query
 class InputForm(FlaskForm):
     #Meat
     fish = BooleanField("Fish", default=False, validators=[Optional()])
