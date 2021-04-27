@@ -7,7 +7,7 @@
       <div class = "TopBar">
         <div class="PageIntro">
           <h1>Found Recipes</h1>
-          {% for key in machineCountry.keys() %}
+          {% for key in machineCountry.keys() %} <!- Goes through a loop of the suggested country from machine learning to demonstrate the selected cuisine to the user-->
             {% if response.results != [] %}
               <h3>You have got a {{ key }} dish!</h3>
             {% else %}
@@ -21,7 +21,7 @@
             {% if value == 'Please click "Find Recipe"' %}
               {{ value }} to begin
             {% else %}
-              {% for key,val in value.items() %}
+              {% for key,val in value.items() %} <!- Displays ingredients the user has selected-->
                 {% if val == 1 %}
                   {{ key }}
                 {% else %}
@@ -33,7 +33,7 @@
         <div class="countryImage">
           {% for key in machineCountry.keys() %}
             {% if response.results != [] %}
-              <img class="countryImage" src=".\static\{{ key }}.png" alt="{{ key }}">
+              <img class="countryImage" src=".\static\{{ key }}.png" alt="{{ key }}"> <!- Displays image of determined country-->
             {% endif %}
           {% endfor %}
         </div>
@@ -46,7 +46,7 @@
               {% for key in response.results %}
               <div class="output">
                 <div class="outputText">
-                  <h3> {{ key.title }} </h3>
+                  <h3> {{ key.title }} </h3> <!- Displays details for all returned results-->
                   <p> Ready in: {{ key.readyInMinutes }} mins </p>
                   <p> Serves: {{ key.servings }}
                   <p> See more about the recipe: <a href="{{ key.sourceUrl }}">{{ key.sourceUrl }}</a></p>
@@ -55,7 +55,7 @@
               </div>
               {% endfor %}
             {% else %}
-              <h3>Error, no recipes found with that combination of ingredients</h3>
+              <h3>Error, no recipes found with that combination of ingredients</h3> <!- Error message if no recipes found for ingredient combination-->
             {% endif %}
           {% endif %}
       </div>
