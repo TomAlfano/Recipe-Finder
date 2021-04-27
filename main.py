@@ -1,7 +1,6 @@
 #importing of libraries
 from flask import Flask, render_template, request, url_for, redirect
-from .forms import  InputForm
-from .forms import JSONButton
+from .cvsetup import  InputForm, JSONButton
 from .bayes import machineLearning
 import json
 import requests
