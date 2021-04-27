@@ -4,25 +4,25 @@ def machineLearning(inputCheckboxes):
     import math
     with open(r'data.csv', newline ='') as csvfile:
         data=list(csv.reader(csvfile))
-        c=-1
+        c=0
         separated=[]
         trainingDict = {'Italian':[],'Mexican':[],'Indian':[],'French':[],'British':[],'Japanese':[]}
         #puts data into rows, including dish name
         for row in data:
             separated.append(row)
-            c=c+1
-            if row[10]== 'Italian':
+            if row[(len(row)-1)]== 'Italian':
                 trainingDict['Italian'].append(row)
-            elif row[10]== 'Mexican':
+            elif row[(len(row)-1)]== 'Mexican':
                 trainingDict['Mexican'].append(row)
-            elif row[10]== 'Indian':
+            elif row[(len(row)-1)]== 'Indian':
                 trainingDict['Indian'].append(row)
-            elif row[10]== 'British':
+            elif row[(len(row)-1)]== 'British':
                 trainingDict['British'].append(row)
-            elif row[10]== 'French':
+            elif row[(len(row)-1)]== 'French':
                 trainingDict['French'].append(row)
-            elif row[10]== 'Japanese':
+            elif row[(len(row)-1)]== 'Japanese':
                 trainingDict['Japanese'].append(row)
+            c=c+1
 
         sumTrainingData = c
         #totals cv for training data for each class
@@ -33,7 +33,7 @@ def machineLearning(inputCheckboxes):
                 #print(row)
 
                 i=1
-                while i<10:
+                while i<(len(row)-1):
                     if c == 0:
                         if row[i] == '1':
                             totalList.append(1)

@@ -80,22 +80,26 @@ header {
 .forms{
   display: flex;
   flex-direction: row;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 .countries{
   display: flex;
   flex-direction: column;
   margin-left: 15px;
 }
-#list{
-  font-size: 1.5rem;
-}
+
 
 .ingredients{
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
+  margin-left: 0px;
   font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.cvTitle{
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .button{
@@ -139,8 +143,8 @@ header {
 
 .countryImage{
   padding-top: 10px;
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
 }
 .outputText{
   display: flex;

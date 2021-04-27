@@ -38,7 +38,7 @@ def search_page():
         OutputString = ""
         querystring = ""
         global ingredientInput
-        ingredientInput = {'meat':numberize(form.meat.data),'fish':numberize(form.fish.data),'vegetable':numberize(form.vegetable.data),'fruit':numberize(form.fruit.data),'potato':numberize(form.potato.data),'pasta':numberize(form.pasta.data),'rice':numberize(form.rice.data),'egg':numberize(form.egg.data),'dairy':numberize(form.dairy.data)}
+        ingredientInput = {'fish':numberize(form.fish.data),'chicken':numberize(form.chicken.data),'beef':numberize(form.beef.data),'egg':numberize(form.egg.data),'rice':numberize(form.rice.data),'pasta':numberize(form.pasta.data),'bread':numberize(form.bread.data),'milk':numberize(form.milk.data),'cheese':numberize(form.cheese.data),'butter':numberize(form.butter.data),'potato':numberize(form.potato.data),'carrot':numberize(form.carrot.data),'garlic':numberize(form.garlic.data),'onion':numberize(form.onion.data),'fruit':numberize(form.fruit.data)}
         inputCheckboxes = []
         for ingredient, value in ingredientInput.items():
             inputCheckboxes.append(value)

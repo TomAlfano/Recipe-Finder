@@ -27,15 +27,26 @@
           <form method="POST" action="">
             <div class="ingredients">
               {{ form.csrf_token }}
-              <div>{{ form.meat}}{{form.meat.label}}</div>
+              <h3 class="cvTitle">Meat</h3>
               <div>{{ form.fish}}{{form.fish.label}}</div>
-              <div>{{ form.vegetable}}{{form.vegetable.label}}</div>
-              <div>{{ form.fruit}}{{form.fruit.label}}</div>
-              <div>{{ form.potato}}{{form.potato.label}}</div>
-              <div>{{ form.pasta}}{{form.pasta.label}}</div>
-              <div>{{ form.rice}}{{form.rice.label}}</div>
+              <div>{{ form.chicken}}{{form.chicken.label}}</div>
+              <div>{{ form.beef}}{{form.beef.label}}</div>
               <div>{{ form.egg}}{{form.egg.label}}</div>
-              <div>{{ form.dairy}}{{form.dairy.label}}</div>
+              <h3 class="cvTitle">Carbs</h3>
+              <div>{{ form.rice}}{{form.rice.label}}</div>
+              <div>{{ form.pasta}}{{form.pasta.label}}</div>
+              <div>{{ form.bread}}{{form.bread.label}}</div>
+              <h3 class="cvTitle">Dairy</h3>
+              <div>{{ form.milk}}{{form.milk.label}}</div>
+              <div>{{ form.cheese}}{{form.cheese.label}}</div>
+              <div>{{ form.butter}}{{form.butter.label}}</div>
+              <h3 class="cvTitle">Vegetable</h3>
+              <div>{{ form.potato}}{{form.potato.label}}</div>
+              <div>{{ form.carrot}}{{form.carrot.label}}</div>
+              <div>{{ form.garlic}}{{form.garlic.label}}</div>
+              <div>{{ form.onion}}{{form.onion.label}}</div>
+              <h3 class="cvTitle">Other</h3>
+              <div>{{ form.fruit}}{{form.fruit.label}}</div>
               <div class = "button">{{ form.submit(id = 'submitButton') }}</div>
             </div>
           </form>
